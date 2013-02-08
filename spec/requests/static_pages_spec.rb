@@ -22,8 +22,8 @@ require 'spec_helper'
 	describe "About page" do
 		before { visit about_path }
 		
-		it { should have_selector('h1',    text: 'About Us') }
-	  it { should have_selector('title', text: full_title('About Us')) }
+		it { should have_selector('h1',    text: 'About us') }
+	  it { should have_selector('title', text: full_title('About us')) }
 	end
 
 	describe "Contact page" do
@@ -35,8 +35,10 @@ require 'spec_helper'
 
 	it "should have the right links in the layout" do
 		visit root_path
-		# click_link "About"
-		# page.should have_selector 'title', text: full_title('About us')
+		click_link "Sign in"
+		page.should have_selector 'title', text: full_title('Sign in')
+		click_link "About"
+		page.should have_selector 'title', text: full_title('About us')
 		#this page fails even though link works!?
 		click_link "Help"
 		page.should have_selector 'title', text: full_title('Help')				
