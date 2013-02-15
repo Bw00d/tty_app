@@ -50,8 +50,8 @@ describe "User pages" do
 	describe "signup page" do
 		before { visit signup_path }
 
-		it { should have_selector('h1',    text: 'Sign up') }
-		it { should have_selector('title', text: full_title('Sign up')) }
+		it { should have_selector('h1',    text: 'create user') }
+		it { should have_selector('title', text: full_title('create user')) }
 	end
 
 	describe "profile page" do
@@ -125,7 +125,7 @@ describe "User pages" do
 
 		before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "create user" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -135,7 +135,7 @@ describe "User pages" do
       describe "after submission" do
         before {click_button submit }
 
-        it { should have_selector('title', text: 'Sign up') }
+        it { should have_selector('title', text: 'create user') }
         it { should have_content('error') }
         it { should_not have_content('Password digest') }
       end
