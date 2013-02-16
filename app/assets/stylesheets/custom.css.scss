@@ -221,9 +221,10 @@ input {
 }
 
 /* microposts */
+ 
 
 .microposts {
-  list-style: none;
+  list-style: none; 
   margin: 10px 0 0 0;
 
   li {
@@ -232,9 +233,10 @@ input {
   }
 }
 .content {
-  display: block;
+  display: inline;  /* I changed this from :block; */
 }
 .timestamp {
+  display: inline;  /* I added this line */
   color: $grayLight;
 }
 .gravatar {
