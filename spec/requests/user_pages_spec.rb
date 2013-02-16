@@ -146,6 +146,7 @@ describe "User pages" do
 			before do
 			  fill_in "Name", 				with: "Example User"
 				fill_in "Email", 				with: "user@example.com"
+				fill_in "Username",			with: "example.user.ABC"
 				fill_in "Password", 		with: "foobar"
 				fill_in "Confirmation", with: "foobar"
 			end
@@ -189,11 +190,13 @@ describe "User pages" do
 
 			describe "with valid information" do
 				let(:new_name) {"New Name"}
+				let(:new_username) {"new.username.ABC"}
 				let(:new_email) {"new@example.com"}
 
 				before do
 					fill_in "Name",	 						with: new_name
 					fill_in "Email", 						with: new_email
+					fill_in "Username",					with: new_username
 					fill_in "Password", 				with: user.password
 					fill_in "Confirm Password", with: user.password
 					click_button "Save changes"
@@ -207,32 +210,4 @@ describe "User pages" do
 			end			
 		end
 	end
-
-	describe "following/followers" do
-    let(:user) { FactoryGirl.create(:user) }
-    let(:other_user) { FactoryGirl.create(:user) }
-    before { user.follow!(other_user) }
-
-    describe "followed users" do
-      before do
-        sign_in user
-        visit following_user_path(user)
-      end
-
-      it { should have_selector('title', text: full_title('Following')) }
-      it { should have_selector('h3', text: 'Following') }
-      it { should have_link(other_user.name, href: user_path(other_user)) }
-    end
-
-    describe "followers" do
-      before do
-        sign_in other_user
-        visit followers_user_path(other_user)
-      end
-
-      it { should have_selector('title', text: full_title('Followers')) }
-      it { should have_selector('h3', text: 'Followers') }
-      it { should have_link(user.name, href: user_path(user)) }
-    end
-  end
 end
