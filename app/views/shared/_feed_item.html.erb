@@ -1,6 +1,7 @@
-<li id="<%= feed_item.id %>">
+
+  <li id="<%= feed_item.id %>">
     <span class="user">
-      <%= link_to feed_item.user.name, feed_item.user %>
+      <%= link_to feed_item.user.username, feed_item.user %>
     </span>
     <span class="content"><%= feed_item.content %></span>
     <span class="timestamp">
@@ -11,5 +12,4 @@
                                      data: { confirm: "You sure?" },
                                      title: feed_item.content %>
   <%#end %>
-</li>
-
+  </li>

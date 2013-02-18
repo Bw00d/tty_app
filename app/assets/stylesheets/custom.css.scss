@@ -117,6 +117,13 @@ footer {
   @include box_sizing;
 }
 
+#feed_box {
+  width: 650px; 
+  height: 700px; 
+  overflow: auto; 
+  padding: 5px
+}
+
 /* sidebar */
 
 aside {
