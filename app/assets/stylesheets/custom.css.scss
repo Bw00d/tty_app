@@ -26,7 +26,7 @@ section {
 
 textarea {
   resize: vertical;
-}
+} 
 
 .center {
   text-align: center;
@@ -118,11 +118,12 @@ footer {
 }
 
 #feed_box {
-  width: 650px; 
+  width: 800px; 
   height: 700px; 
   overflow: auto; 
   padding: 5px
 }
+
 
 /* sidebar */
 
@@ -239,20 +240,27 @@ input {
     border-top: 1px solid #e8e8e8;
   }
 }
+.user {
+  
+}
 .content {
   display: inline;  /* I changed this from :block; */
+  
 }
 .timestamp {
   display: inline;  /* I added this line */
   color: $grayLight;
+  float: right;
 }
 .gravatar {
   float: left;
   margin-right: 10px;
 }
-aside {
+  #post_form {
   textarea {
-    height: 100px;
-    margin-bottom: 5px;
+    height: 30px;
+    width: 800;
+    margin-top: 5px;
+    @include box_sizing;
   }
-}
+} 

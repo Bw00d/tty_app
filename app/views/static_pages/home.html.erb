@@ -1,27 +1,31 @@
 <% if signed_in? %>
   <div class="row">
-    <aside class="span4">
+    <aside class="span2">
       <section>
         <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%#= render 'shared/stats' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
+      </section>      
     </aside>
-    <div class="span8">
-    	<h3>Date and time here</h3>
-    	<%= render 'shared/feed' %>
+  </div>
+  <div class="row">
+    <div class="span9 offset2">
+      <h3>Date and time here</h3>
+      <div id="feed_box">
+        <%= render 'shared/feed' %>
+      </div>
+      <section>
+        <div id="post_form">
+        <%= render 'shared/micropost_form' %>
+      </div>
+      </section>
     </div>
+  </div>
   </div>  
 <% else %>
 
-	<div class="center hero-unit">
-		<%= image_tag "logo.png", alt: "logo image" %>
-		<p>
-			This is the home page for the tty application.
-		</p>
-	</div>
-	<% end %>
+  <div class="center hero-unit">
+    <%= image_tag "logo.png", alt: "logo image" %>
+    <p>
+      This is the home page for the tty application.
+    </p>
+  </div>
+  <% end %>
